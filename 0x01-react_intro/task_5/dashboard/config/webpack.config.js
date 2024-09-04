@@ -55,17 +55,20 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/, // Match both .js and .jsx files
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', // If you're using Babel for JS transpiling
+          loader: 'babel-loader', // Use babel-loader to transpile JS/JSX files
         },
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx'], // Allow importing JS/JSX files without specifying their extension
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // Your HTML template file
+      template: './dist/index.html', // Your HTML template file
     }),
     new webpack.HotModuleReplacementPlugin(), // Enable HMR
   ],
