@@ -1,0 +1,29 @@
+.Notifications {
+  position: relative;
+  padding: 5px;
+  border: 2px dashed rgb(243, 95, 95);
+}
+
+.Notifications img {
+  width: 15px;
+  height: 15px;
+}
+
+.Notifications button, .Notifications img {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+[data-priority='default'] {
+  color: blue;
+}
+
+[data-priority='urgent'] {
+  color: red;
+}
+
+.Notifications button {
+  background: none;
+  border: none;
+}
