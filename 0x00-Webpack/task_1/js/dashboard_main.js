@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import debounce from 'lodash/debounce';
+import _ from 'debounce';
 
 
 let count = 0;
@@ -14,6 +14,6 @@ function updateCounter() {
   $('#count').html(`${count} clicks on the button`);
 }
 
-const debouncedCounter = debounce(updateCounter, 500);
+const debouncedCounter = _.debounce(updateCounter, 500);
 
 document.getElementsByTagName('button')[0].addEventListener('click', debouncedCounter);
