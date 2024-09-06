@@ -17,25 +17,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        test: /\.css$/i, // For handling .css files
+        use: ['style-loader', 'css-loader'], // Processes CSS files and injects them into the DOM
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[hash].[ext]',
-              outputPath: 'images/',
-              publicPath: 'images/',
-            }
-          }
-        ]
-      }
+        test: /\.(png|jpe?g|gif|svg)$/i, // For handling image files
+        type: 'asset/resource', // Asset Modules for images
+      },
     ]
   }
 };
