@@ -15,11 +15,14 @@ export function Notifications({ displayDrawer, listNotifications }) {
       {displayDrawer && (
         <div className='Notifications'>
         <p>Here is the list of notifications</p>
-        <ul>
-          <NotificationItem type="default" value="New course available" />
-          <NotificationItem type="urgent" value="New resume available" />
-          <NotificationItem type="urgent" html={getLatestNotification()} />
-        </ul>
+        {listNotifications.length == 0 ? (
+          <span><bold>No new notification for now</bold></span>
+        ) : (
+          listNotifications.map((notification) => (
+            notification.value ? <NotificationItem type={notification.type} value={notification.value} /> :
+            <NotificationItem type={notification.type} html={notification.html} />
+          ))
+        )}
         <button style={{ right: '10px' }} aria-label='Close' onClick={() => console.log('Close button has been clicked')}>
           <img src={closeIcon} alt='Close icon'></img>
         </button>
@@ -36,4 +39,5 @@ Notifications.propTypes = {
 
 Notifications.defaultProps = {
   displayDrawer: false,
+  listNotifications: [],
 }
