@@ -1,0 +1,15 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  color: rgb(243, 95, 95);
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+hr {
+  height: 4px;
+  background-color: rgb(243, 95, 95);
+}

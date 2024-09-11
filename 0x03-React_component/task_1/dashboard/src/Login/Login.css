@@ -1,0 +1,9 @@
+.App-body {
+  height: 500px;
+  padding-left: 50px;
+}
+
+.App-body P {
+  font-weight: bold;
+  font-size: large;
+}
