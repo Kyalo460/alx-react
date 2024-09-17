@@ -17,14 +17,14 @@ export function CourseListRow({isHeader, textFirstCell, textSecondCell}) {
           <th style={header} colSpan="2">{textFirstCell}</th>
         ) : (
           <>
-            <th style={row}>{textFirstCell}</th>
-            <th style={row}>{textSecondCell}</th>
+            <th style={header}>{textFirstCell}</th>
+            <th style={header}>{textSecondCell}</th>
           </>
         )
       ) : (
         <>
-          <td>{textFirstCell}</td>
-          <td>{textSecondCell}</td>
+          <td style={row}>{textFirstCell}</td>
+          <td style={row}>{textSecondCell}</td>
         </>
       )}
     </tr>
