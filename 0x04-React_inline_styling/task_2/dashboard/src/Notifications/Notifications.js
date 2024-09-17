@@ -29,11 +29,6 @@ const styles = StyleSheet.create({
     right: 5,
     background: 'none',
     border: 'none'
-  },
-  menuItem: {
-    position: 'absolute',
-    top: 5,
-    right: 30
   }
 })
 
@@ -50,7 +45,7 @@ export class Notifications extends React.Component {
     const {displayDrawer, listNotifications} = this.props;
     return (
       <>
-        <div className={css(styles.menuItem)}>
+        <div className="menuItem">
           Your notifications:
         </div>
         {displayDrawer && (
