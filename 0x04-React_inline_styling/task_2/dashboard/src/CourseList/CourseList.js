@@ -10,12 +10,19 @@ const styles = StyleSheet.create({
     border: "3px solid grey",
     padding: 8,
     textAlign: "left"
+  },
+  table: {
+    width: '80%',
+    borderCollapse: 'collapse',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: '30%'
   }
 })
 
 export function CourseList({ listCourses }) {
   return (
-    <table id="CourseList">
+    <table className={css(styles.table)} id="CourseList">
       <thead className={css(styles.all)}>
         <CourseListRow textFirstCell="Available courses" isHeader={true} />
         <CourseListRow textFirstCell="Course name" textSecondCell="Credit" isHeader={true} />

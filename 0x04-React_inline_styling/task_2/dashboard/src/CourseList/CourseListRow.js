@@ -1,30 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { StyleSheet, css} from 'aphrodite'
 
-const row = {
-  backgroundColor: '#f5f5f5ab'
-}
-
-const header = {
-  backgroundColor: '#deb5b545'
-}
+const styles = StyleSheet.create({
+  row: {
+    backgroundColor: '#f5f5f5ab'
+  },
+  header: {
+    backgroundColor: '#deb5b545'
+  },
+  colSpan: {
+    textAlign: center
+  }
+})
 
 export function CourseListRow({isHeader, textFirstCell, textSecondCell}) {
   return (
     <tr>
       {isHeader ? (
         textSecondCell === null ? (
-          <th style={header} colSpan="2">{textFirstCell}</th>
+          <th className={css(styles.header, styles.colSpan)} colSpan="2">{textFirstCell}</th>
         ) : (
           <>
-            <th style={header}>{textFirstCell}</th>
-            <th style={header}>{textSecondCell}</th>
+            <th className={css(styles.header)}>{textFirstCell}</th>
+            <th className={css(styles.header)}>{textSecondCell}</th>
           </>
         )
       ) : (
         <>
-          <td style={row}>{textFirstCell}</td>
-          <td style={row}>{textSecondCell}</td>
+          <td className={css(styles.row)}>{textFirstCell}</td>
+          <td className={css(styles.row)}>{textSecondCell}</td>
         </>
       )}
     </tr>

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Notifications.css';
 import NotificationItem from './NotificationItem';
 import closeIcon from '../assets/close-icon.png';
 import { getLatestNotification } from '../utils/utils';
@@ -29,6 +28,11 @@ const styles = StyleSheet.create({
     right: 5,
     background: 'none',
     border: 'none'
+  },
+  menuItem: {
+    position: 'absolute',
+    top: 5,
+    right: 30
   }
 })
 
@@ -45,7 +49,7 @@ export class Notifications extends React.Component {
     const {displayDrawer, listNotifications} = this.props;
     return (
       <>
-        <div className="menuItem">
+        <div className={css(styles.menuItem)}>
           Your notifications:
         </div>
         {displayDrawer && (
