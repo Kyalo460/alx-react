@@ -80,9 +80,11 @@ export class Notifications extends React.Component {
     console.log(`Notification ${id} has been marked as read`)
   }
   
-  // shouldComponentUpdate(nextProps) {
-  //   return nextProps.listNotifications.length > this.props.listNotifications.length;
-  // }
+  shouldComponentUpdate(nextProps) {
+    const notificationsChanged = nextProps.listNotifications.length > this.props.listNotifications.length;
+    const displayDrawerChanged = nextProps.displayDrawer !== this.props.displayDrawer;
+    return notificationsChanged || displayDrawerChanged;
+  }
 
   render() {
     const {displayDrawer, listNotifications, handleDisplayDrawer, handleHideDrawer} = this.props;
