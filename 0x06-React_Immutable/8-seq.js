@@ -9,5 +9,5 @@ export default function printBestStudents(object) {
     return value;
   });
 
-  console.log(transformed.toObject);
+  console.log(transformed.toObject());
 }
