@@ -1,6 +1,6 @@
 import { Seq } from 'immutable';
 
-export default function printBestStudents (object) {
+export default function printBestStudents(object) {
   const seqObj = Seq(object);
 
   const transformed = seqObj.filter(value => value.score < 70).map(value => {
